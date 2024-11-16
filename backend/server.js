@@ -39,6 +39,9 @@ app.use(cookieParser());
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // Routes
+app.get("/", (req, res) => {
+  res.send("Car Management App");
+});
 app.use("/api/auth", authRoutes);
 app.use("/api/cars", carRoutes);
 

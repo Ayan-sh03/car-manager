@@ -83,9 +83,6 @@ export function CarForm() {
       );
       const car = await res.json();
 
-      console.log("====================");
-      console.log("car is ", car);
-      console.log("====================");
       addCar({
         title: car.title,
         description: car.description,

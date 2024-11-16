@@ -1,5 +1,5 @@
 const upload = require("../middleware/upload");
-const Car = require("../models/Car");
+const Car = require("../models/car");
 const { validationResult } = require("express-validator");
 
 // @desc    Create new car

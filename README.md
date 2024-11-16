@@ -53,7 +53,7 @@ npm install
 
 ```
 # Backend
-node server.js
+npm start
 
 # Frontend
 npm run dev
@@ -61,6 +61,10 @@ npm run dev
 
 4. Open your browser and go to http://localhost:5173 to access the application.
 
-## API Documentation
-
 API documentation is available at http://localhost:8080/api/docs.
+
+5.To seed the Database run :
+
+```node
+npm run seed
+```

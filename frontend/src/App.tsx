@@ -18,19 +18,33 @@ function PrivateRoute({ children }: { children: React.ReactNode }) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Wait for user state to be determined
-    if (user !== null) {
-      setIsLoading(false);
-    }
+    const checkAuth = async () => {
+      // Set a timeout to prevent infinite loading
+      const timeoutId = setTimeout(() => {
+        setIsLoading(false);
+      }, 2000);
+
+      if (user !== null) {
+        clearTimeout(timeoutId);
+        setIsLoading(false);
+      }
+
+      return () => clearTimeout(timeoutId);
+    };
+
+    checkAuth();
   }, [user]);
 
   if (isLoading) {
-    return <div>Loading...</div>; // Or your loading component
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900"></div>
+      </div>
+    );
   }
 
   return user ? <>{children}</> : <Navigate to="/login" />;
 }
-
 function App() {
   const { initUser } = useAuth();
 

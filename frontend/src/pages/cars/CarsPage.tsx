@@ -1,13 +1,12 @@
-import { useEffect, useState } from "react";
-import { useAuth } from "@/lib/auth";
-import { useCars } from "@/lib/cars";
 import { CarGrid } from "@/components/cars/CarGrid";
 import { CarSearch } from "@/components/cars/CarSearch";
 import { Button } from "@/components/ui/button";
+import { useAuth } from "@/lib/auth";
+import { useCars } from "@/lib/cars";
 import { Plus } from "lucide-react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import type { Car } from "../../lib/types";
-import { title } from "process";
 
 export function CarsPage() {
   const [search, setSearch] = useState("");

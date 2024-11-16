@@ -67,7 +67,7 @@ export function CarForm() {
       data.tags.forEach((tag) => formData.append("tags", tag));
 
       // Append each image file to formData
-      data.images.forEach((image, index) => {
+      data.images.forEach((image, _) => {
         formData.append("images", image);
       });
 

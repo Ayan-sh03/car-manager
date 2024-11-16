@@ -21,7 +21,11 @@ const app = express();
 // Enable CORS with specific origins
 app.use(
   cors({
-    origin: ["http://localhost:5173", "http://localhost:3000"],
+    origin: [
+      "http://localhost:5173",
+      "http://localhost:3000",
+      "https://carman-theta.vercel.app",
+    ],
     credentials: true,
   })
 );
